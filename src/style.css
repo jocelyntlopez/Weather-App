@@ -1,0 +1,74 @@
+.card {
+  display: block;
+  margin: 50px auto;
+  width: 900px;
+}
+.card-body {
+  padding: 25px;
+}
+h1,
+h2,
+.todays-high,
+.todays-low {
+  margin: 0;
+  line-height: 38px;
+}
+.todays-high,
+.todays-low {
+  line-height: 17px;
+}
+.todays-info {
+  text-align: center;
+  line-height: 20px;
+  width: 150px;
+  padding-right: 0;
+  padding-left: 25px;
+  padding-top: 15px;
+}
+.col-1 {
+  line-height: 10px;
+  text-align: center;
+  width: 140px;
+  font-size: 95px;
+  padding: 0;
+}
+.todays-date {
+  padding-top: 5px;
+  padding-bottom: 100px;
+}
+h3,
+h4 {
+  margin: 0;
+  line-height: 34px;
+  text-align: center;
+}
+h3 {
+  font-size: 37px;
+}
+.weeks-weather {
+  line-height: 55px;
+  padding-bottom: 40px;
+}
+.days-temp {
+  line-height: 18px;
+  font-size: 20px;
+}
+.day {
+  font-size: 25px;
+}
+.weather-img {
+  font-size: 75px;
+}
+.day-two {
+  border: 2px rgb(0, 0, 0, 0.2);
+  border-style: none solid;
+}
+.day-three,
+.day-four,
+.day-five {
+  border: 2px rgb(0, 0, 0, 0.2);
+  border-style: none solid none none;
+}
+input {
+  text-align: center;
+}
