@@ -48,9 +48,11 @@ function findCelsius(response) {
   cTemp = Math.round(response.data.main.temp);
   let wind = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.main.humidity);
+  let currentDescription = response.data.weather[0].description;
   changeTemp.innerHTML = cTemp;
   windSpeed.innerHTML = wind;
   humidityPercent.innerHTML = humidity;
+  weatherDescription.innerHTML = currentDescription;
 }
 
 let currentLocation = document.querySelector("#current-location");
@@ -73,12 +75,16 @@ function currentTemp(response) {
   cTemp = Math.round(response.data.main.temp);
   let wind = Math.round(response.data.wind.speed);
   let humidity = Math.round(response.data.main.humidity);
+  let currentDescription = response.data.weather[0].description;
   let city = response.data.name;
   let h1 = document.querySelector("h1");
   h1.innerHTML = city;
   changeTemp.innerHTML = cTemp;
   windSpeed.innerHTML = wind;
   humidityPercent.innerHTML = humidity;
+  weatherDescription.innerHTML = currentDescription;
+
+  console.log(response);
 }
 
 function showCelsius(event) {
@@ -109,3 +115,5 @@ celsiusLink.addEventListener("click", showCelsius);
 let windSpeed = document.querySelector("#wind");
 
 let humidityPercent = document.querySelector("#humidity");
+
+let weatherDescription = document.querySelector("#weather-description");

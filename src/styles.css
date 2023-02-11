@@ -19,16 +19,16 @@ h1 {
   text-align: center;
   line-height: 20px;
   width: 150px;
-  padding-right: 0;
-  padding-left: 25px;
-  padding-top: 15px;
+  padding-top: 50px;
 }
 .col-1 {
   line-height: 10px;
   text-align: center;
   width: 140px;
   font-size: 95px;
-  padding: 0;
+  padding-top: 30px;
+  padding-right: 0;
+  padding-left: 0;
 }
 .todays-date {
   padding-top: 5px;
@@ -72,4 +72,13 @@ h3 {
   color: rgb(0, 0, 0);
   cursor: default;
   text-decoration: none;
+}
+
+.weather-description {
+  text-align: center;
+  font-size: 25px;
+}
+
+.weather-description:first-letter {
+  text-transform: uppercase;
 }
