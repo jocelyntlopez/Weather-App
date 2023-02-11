@@ -41,11 +41,11 @@ function cityTemp(event) {
   let apiKey = "a625733502fa5d280b89e6ead1b45129";
   let city = document.querySelector("#change-city");
   let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
-  axios.get(apiLink).then(showCelsius);
+  axios.get(apiLink).then(findCelsius);
 }
 
-function showCelsius(response) {
-  let cTemp = Math.round(response.data.main.temp);
+function findCelsius(response) {
+  cTemp = Math.round(response.data.main.temp);
   let changeTemp = document.querySelector("#change-temp");
   changeTemp.innerHTML = `${cTemp}`;
 }
@@ -67,10 +67,34 @@ function showPosition(position) {
 }
 
 function currentTemp(response) {
-  let cTemp = Math.round(response.data.main.temp);
+  cTemp = Math.round(response.data.main.temp);
   let changeTemp = document.querySelector("#change-temp");
   let city = response.data.name;
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${city}`;
   changeTemp.innerHTML = `${cTemp}`;
 }
+
+function showCelsius(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let changeTemp = document.querySelector("#change-temp");
+  changeTemp.innerHTML = Math.round(cTemp);
+}
+
+function showFahrenheit(event) {
+  event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fTemp = (cTemp * 9) / 5 + 32;
+  let changeTemp = document.querySelector("#change-temp");
+  changeTemp.innerHTML = Math.round(fTemp);
+}
+let cTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsius);

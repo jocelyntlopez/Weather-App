@@ -6,16 +6,14 @@
 .card-body {
   padding: 25px;
 }
-h1,
-h2,
-.todays-high,
-.todays-low {
-  margin: 0;
-  line-height: 38px;
+h1 {
+  font-size: 55px;
 }
-.todays-high,
-.todays-low {
-  line-height: 17px;
+.current-temp {
+  font-size: 50px;
+}
+.units {
+  font-size: 16px;
 }
 .todays-info {
   text-align: center;
@@ -68,4 +66,10 @@ h3 {
 .day-five {
   border: 2px rgb(0, 0, 0, 0.2);
   border-style: none solid none none;
+}
+
+.units .active {
+  color: rgb(0, 0, 0);
+  cursor: default;
+  text-decoration: none;
 }
