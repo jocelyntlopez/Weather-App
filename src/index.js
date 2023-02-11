@@ -38,17 +38,17 @@ function enterCity(event) {
 
 function cityTemp(event) {
   event.preventDefault();
-  let apiKey = "a625733502fa5d280b89e6ead1b45129";
+  let apiKey = "f7def44a260o7a6t33069ef99b69e2f4";
   let city = document.querySelector("#change-city");
-  let apiLink = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=metric`;
+  let apiLink = `https://api.shecodes.io/weather/v1/current?query=${city.value}&key=${apiKey}&units=metric`;
   axios.get(apiLink).then(findCelsius);
 }
 
 function findCelsius(response) {
-  cTemp = Math.round(response.data.main.temp);
+  cTemp = Math.round(response.data.temperature.current);
   let wind = Math.round(response.data.wind.speed);
-  let humidity = Math.round(response.data.main.humidity);
-  let currentDescription = response.data.weather[0].description;
+  let humidity = Math.round(response.data.temperature.humidity);
+  let currentDescription = response.data.condition.description;
   changeTemp.innerHTML = cTemp;
   windSpeed.innerHTML = wind;
   humidityPercent.innerHTML = humidity;
@@ -66,17 +66,17 @@ function findLocation(event) {
 function showPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
-  let apiKey = "a625733502fa5d280b89e6ead1b45129";
-  let apiLink = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  let apiKey = "f7def44a260o7a6t33069ef99b69e2f4";
+  let apiLink = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
   axios.get(apiLink).then(currentTemp);
 }
 
 function currentTemp(response) {
-  cTemp = Math.round(response.data.main.temp);
+  cTemp = Math.round(response.data.temperature.current);
   let wind = Math.round(response.data.wind.speed);
-  let humidity = Math.round(response.data.main.humidity);
-  let currentDescription = response.data.weather[0].description;
-  let city = response.data.name;
+  let humidity = Math.round(response.data.temperature.humidity);
+  let currentDescription = response.data.condition.description;
+  let city = response.data.city;
   let h1 = document.querySelector("h1");
   h1.innerHTML = city;
   changeTemp.innerHTML = cTemp;
