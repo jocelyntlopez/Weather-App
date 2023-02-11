@@ -53,6 +53,12 @@ function findCelsius(response) {
   windSpeed.innerHTML = wind;
   humidityPercent.innerHTML = humidity;
   weatherDescription.innerHTML = currentDescription;
+  weatherIcon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
+
+  console.log(response);
 }
 
 let currentLocation = document.querySelector("#current-location");
@@ -83,8 +89,10 @@ function currentTemp(response) {
   windSpeed.innerHTML = wind;
   humidityPercent.innerHTML = humidity;
   weatherDescription.innerHTML = currentDescription;
-
-  console.log(response);
+  weatherIcon.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
 
 function showCelsius(event) {
@@ -117,3 +125,5 @@ let windSpeed = document.querySelector("#wind");
 let humidityPercent = document.querySelector("#humidity");
 
 let weatherDescription = document.querySelector("#weather-description");
+
+let weatherIcon = document.querySelector("#weather-icon");
