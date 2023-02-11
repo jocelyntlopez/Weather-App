@@ -46,8 +46,11 @@ function cityTemp(event) {
 
 function findCelsius(response) {
   cTemp = Math.round(response.data.main.temp);
-  let changeTemp = document.querySelector("#change-temp");
-  changeTemp.innerHTML = `${cTemp}`;
+  let wind = Math.round(response.data.wind.speed);
+  let humidity = Math.round(response.data.main.humidity);
+  changeTemp.innerHTML = cTemp;
+  windSpeed.innerHTML = wind;
+  humidityPercent.innerHTML = humidity;
 }
 
 let currentLocation = document.querySelector("#current-location");
@@ -68,18 +71,20 @@ function showPosition(position) {
 
 function currentTemp(response) {
   cTemp = Math.round(response.data.main.temp);
-  let changeTemp = document.querySelector("#change-temp");
+  let wind = Math.round(response.data.wind.speed);
+  let humidity = Math.round(response.data.main.humidity);
   let city = response.data.name;
   let h1 = document.querySelector("h1");
-  h1.innerHTML = `${city}`;
-  changeTemp.innerHTML = `${cTemp}`;
+  h1.innerHTML = city;
+  changeTemp.innerHTML = cTemp;
+  windSpeed.innerHTML = wind;
+  humidityPercent.innerHTML = humidity;
 }
 
 function showCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  let changeTemp = document.querySelector("#change-temp");
   changeTemp.innerHTML = Math.round(cTemp);
 }
 
@@ -88,9 +93,11 @@ function showFahrenheit(event) {
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
   let fTemp = (cTemp * 9) / 5 + 32;
-  let changeTemp = document.querySelector("#change-temp");
   changeTemp.innerHTML = Math.round(fTemp);
 }
+
+let changeTemp = document.querySelector("#change-temp");
+
 let cTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -98,3 +105,7 @@ fahrenheitLink.addEventListener("click", showFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
+
+let windSpeed = document.querySelector("#wind");
+
+let humidityPercent = document.querySelector("#humidity");
