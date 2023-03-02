@@ -26,6 +26,35 @@ function formatDate() {
 }
 formatDate();
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col-2 forecast">
+                <span class="forecast-day">${day}</span>
+                <div class="col">
+                  <span class="weather-img"
+                    ><i class="fa-solid fa-cloud"></i
+                  ></span>
+                  <span class="forecast-temp">
+                    <div class="col">
+                      <span class="forecast-high-temp">39°</span>
+                      <div class="col forecast-low-temp">25°</div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
+
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", enterCity);
 form.addEventListener("submit", cityTemp);
