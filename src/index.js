@@ -26,15 +26,15 @@ function formatDate() {
 }
 formatDate();
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Thu", "Fri", "Sat"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `
-              <div class="col-2 forecast">
+      `<div class="col-2 forecast">
                 <span class="forecast-day">${day}</span>
                 <div class="col">
                   <span class="weather-img"
@@ -47,13 +47,18 @@ function displayForecast() {
                     </div>
                   </span>
                 </div>
-              </div>
-            `;
+       </div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "f7def44a260o7a6t33069ef99b69e2f4";
+  let apiLink = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=metric`;
+  axios.get(apiLink).then(displayForecast);
+}
 
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", enterCity);
@@ -92,6 +97,7 @@ function findCelsius(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  getForecast(response.data.coordinates);
 }
 
 let currentLocation = document.querySelector("#current-location");
@@ -126,6 +132,8 @@ function currentTemp(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+
+  getForecast(response.data.coordinates);
 }
 
 function showCelsius(event) {
