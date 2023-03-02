@@ -30,7 +30,7 @@ h1 {
 .todays-low-temp,
 .todays-wind,
 .todays-humidity {
-  color: blue;
+  color: rgba(0, 0, 255, 0.6);
 }
 .todays-info {
   font-size: 13px;
@@ -47,15 +47,16 @@ h1 {
   text-align: center;
 }
 .forecast-day,
-.forecast-low-temp,
-.forecast-high-temp {
+.forecast-low-temp {
   opacity: 0.6;
 }
-.forecast-high-temp {
-  color: blue;
+.forecast-high-temp,
+.forecast-low-temp {
+  color: rgba(0, 0, 255, 0.6);
+  font-weight: bold;
 }
 .buttons {
-  margin-top: 20px;
+  margin-top: 35px;
 }
 .form-control {
   text-align: center;
