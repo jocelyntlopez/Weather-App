@@ -23,120 +23,67 @@
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col-8">
+            <div class="col">
               <h1>Connecticut</h1>
-              <h2>
-                <span class="current-temp" id="change-temp">14</span>
-                <span class="units"
-                  ><a href="#" id="celsius-link" class="active">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a></span
-                >
-              </h2>
-              <div class="todays-high">High: 39°</div>
-              <div class="todays-low">Low: 31°</div>
-            </div>
-            <div class="col-3 todays-info">
-              <div class="wind">Wind: <span id="wind">10</span>MPH</div>
-              <div class="humidity">
-                Humidity: <span id="humidity">72 </span>%
-              </div>
-            </div>
-            <div class="col-1">
-              <img src="" alt="" id="weather-icon" />
-            </div>
-          </div>
-          <div class="row justify-content-end">
-            <div class="col-auto todays-date">
-              <div id="weather-description" class="weather-description">
-                cloudy
-              </div>
-              <h3>Tuesday</h3>
-              <h4>12:07 PM</h4>
-            </div>
-          </div>
-          <div class="row text-center weeks-weather">
-            <div class="col day-one">
-              <span class="day">Mon</span>
-              <div class="col">
-                <span class="weather-img"
-                  ><i class="fa-solid fa-cloud"></i
-                ></span>
-                <span class="days-temp">
-                  <div class="col">
-                    39°
-                    <div class="col">25°</div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="col day-two">
-              <span class="day">Tue</span>
-              <div class="col">
-                <span class="weather-img"><i class="fa-solid fa-sun"></i></span>
-                <span class="days-temp">
-                  <div class="col">
-                    40°
-                    <div class="col">24°</div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="col day-three">
-              <span class="day">Wed</span>
-              <div class="col">
-                <span class="weather-img"><i class="fa-solid fa-sun"></i></span>
-                <span class="days-temp">
-                  <div class="col">
-                    38°
-                    <div class="col">28°</div>
-                  </div>
-                </span>
-              </div>
-            </div>
-            <div class="col day-four">
-              <span class="day">Thu</span>
-              <div class="col">
-                <span class="weather-img"
-                  ><i class="fa-solid fa-cloud"></i
-                ></span>
-                <span class="days-temp">
-                  <div class="col">
-                    39°
-                    <div class="col">37°</div>
-                  </div></span
-                >
-              </div>
-            </div>
-            <div class="col day-five">
-              <span class="day">Fri</span>
-              <div class="col">
-                <span class="weather-img"
-                  ><i class="fa-solid fa-cloud-showers-heavy"></i
-                ></span>
-                <span class="days-temp">
-                  <div class="col">
-                    46°
-                    <div class="col">36°</div>
-                  </div></span
-                >
-              </div>
-            </div>
-            <div class="col day-six">
-              <span class="day">Sat</span>
-              <div class="col">
-                <span class="weather-img"
-                  ><i class="fa-solid fa-cloud-sun"></i
-                ></span>
-                <span class="days-temp">
-                  <div class="col">
-                    44°
-                    <div class="col">31°</div>
-                  </div></span
-                >
-              </div>
+              <span class="current-day" id="current-day">Tuesday</span>
+              <span class="current-time" id="current-time">12:07 PM</span>
             </div>
           </div>
           <div class="row">
+            <div class="col-6 todays-info">
+              <div id="weather-description" class="weather-description">
+                Cloudy
+              </div>
+              <span class="todays-high">
+                High: <span class="todays-high-temp">39°</span>
+              </span>
+              <span class="todays-low">
+                Low: <span class="todays-low-temp">31°</span>
+              </span>
+              <div>
+                <span class="wind"
+                  >Wind:
+                  <span class="todays-wind"
+                    ><span id="wind">10</span>MPH</span
+                  ></span
+                >
+                <span class="humidity">
+                  Humidity:
+                  <span class="todays-humidity"
+                    ><span id="humidity">72 </span>%</span
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-8 current-weather">
+              <div class="temperature-container d-flex justify-content-end">
+                <img src="" alt="" id="weather-icon" width="75px" />
+                <span class="current-temp" id="change-temp">14</span>
+                <span class="current-temp-units"
+                  ><a href="#" id="celsius-link" class="active">°C</a>
+                  <div>—</div>
+                  <div><a href="#" id="fahrenheit-link">°F</a></div></span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="row weeks-weather">
+            <div class="col-2 forecast">
+              <span class="forecast-day">Mon</span>
+              <div class="col">
+                <span class="weather-img"
+                  ><i class="fa-solid fa-cloud"></i
+                ></span>
+                <span class="forecast-temp">
+                  <div class="col">
+                    <span class="forecast-high-temp">39°</span>
+                    <div class="col forecast-low-temp">25°</div>
+                  </div>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="row buttons">
             <div class="col align-self-start">
               <button
                 id="current-location"
@@ -146,7 +93,7 @@
                 Current location
               </button>
             </div>
-            <div class="col-2">
+            <div class="col-3">
               <form id="search-city" autocomplete="off">
                 <input
                   type="text"

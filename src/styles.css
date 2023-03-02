@@ -1,84 +1,62 @@
 .card {
   display: block;
-  margin: 50px auto;
-  width: 900px;
+  margin: 60px auto;
+  max-width: 700px;
 }
 .card-body {
-  padding: 25px;
+  padding: 20px;
 }
 h1 {
-  font-size: 55px;
+  font-size: 35px;
+  margin: 0;
+}
+.temperature-container {
+  align-items: center;
 }
 .current-temp {
-  font-size: 50px;
+  font-size: 80px;
+  margin-right: 10px;
 }
-.units {
-  font-size: 16px;
+.current-temp-units {
+  font-size: 15px;
+  line-height: 12px;
 }
-.todays-info {
-  text-align: center;
-  line-height: 20px;
-  width: 150px;
-  padding-top: 50px;
-}
-.col-1 {
-  line-height: 10px;
-  text-align: center;
-  width: 140px;
-  font-size: 95px;
-  padding-top: 30px;
-  padding-right: 0;
-  padding-left: 0;
-}
-.todays-date {
-  padding-top: 5px;
-  padding-bottom: 100px;
-}
-h3,
-h4 {
-  margin: 0;
-  line-height: 34px;
-  text-align: center;
-}
-h3 {
-  font-size: 37px;
-}
-.weeks-weather {
-  line-height: 55px;
-  padding-bottom: 40px;
-}
-.days-temp {
-  line-height: 18px;
-  font-size: 20px;
-}
-.day {
-  font-size: 25px;
-}
-.weather-img {
-  font-size: 75px;
-}
-.day-two {
-  border: 2px rgb(0, 0, 0, 0.2);
-  border-style: none solid;
-}
-.day-three,
-.day-four,
-.day-five {
-  border: 2px rgb(0, 0, 0, 0.2);
-  border-style: none solid none none;
-}
-
-.units .active {
+.current-temp-units .active {
   color: rgb(0, 0, 0);
   cursor: default;
   text-decoration: none;
 }
-
-.weather-description {
-  text-align: center;
-  font-size: 25px;
+.todays-high-temp,
+.todays-low-temp,
+.todays-wind,
+.todays-humidity {
+  color: blue;
 }
-
+.todays-info {
+  font-size: 13px;
+  opacity: 0.6;
+  margin-top: 30px;
+}
+.current-weather {
+  text-align: center;
+}
 .weather-description:first-letter {
   text-transform: uppercase;
+}
+.forecast {
+  text-align: center;
+}
+.forecast-day,
+.forecast-low-temp,
+.forecast-high-temp {
+  opacity: 0.6;
+}
+.forecast-high-temp {
+  color: blue;
+}
+.buttons {
+  margin-top: 20px;
+}
+.form-control {
+  text-align: center;
 }

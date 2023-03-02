@@ -13,9 +13,9 @@ function formatDate() {
   let hour = now.getHours();
   let minutes = now.getMinutes();
   let currentTime = `${hour}:${minutes}`;
-  let h3 = document.querySelector("h3");
+  let h3 = document.querySelector("#current-day");
   h3.innerHTML = `${currentDay}`;
-  let h4 = document.querySelector("h4");
+  let h4 = document.querySelector("#current-time");
   h4.innerHTML = `${currentTime}`;
 }
 formatDate();
@@ -57,8 +57,6 @@ function findCelsius(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
-
-  console.log(response);
 }
 
 let currentLocation = document.querySelector("#current-location");
